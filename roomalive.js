@@ -7,7 +7,9 @@ const port = process.env.PORT || 8080;
 
 app.get("/run", (req, res) => {
   console.log(req.query.url);
+  setInterval(()=>{
   pupp(req.query.url);
+  },60*1000);
   res.send("running");
 });
 app.get("/", (req, res) => {
@@ -49,6 +51,8 @@ async function pupp(url) {
     setTimeout(()=>{ browser.close()}, 5000);
   
   } catch (err) {
+    
     console.log(err);
+    pupp(url)
   }
 }
