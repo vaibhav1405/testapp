@@ -21,7 +21,7 @@ async function pupp(url) {
   try {
     // Launch Puppeteer and create a new page
     browser = await puppeteer.launch({
-      headless: false,
+      headless: true,
       args: ["--no-sandbox"],
     });
     page = await browser.newPage();
