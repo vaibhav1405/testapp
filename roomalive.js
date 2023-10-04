@@ -41,7 +41,7 @@ async function pupp(url) {
     await page.click(".depLok");
 
     // You might want to add a small delay to allow the click action to take effect
-    await page.waitForTimeout(1000);
+    await page.waitFor(1000);
     await page.waitForSelector(".ant-badge");
 
     await page.$eval(".ant-badge", (element) => element.click());
